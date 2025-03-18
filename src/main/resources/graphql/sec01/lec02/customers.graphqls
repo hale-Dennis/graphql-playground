@@ -1,0 +1,20 @@
+
+
+type Query{
+    customerAll: [Customer]!
+    customerById(id: ID!):  Customer
+    customerNameContains(name: String!): [Customer]
+    customerByAgeRange(filter: AgeRangeFilter!): [Customer]!
+}
+
+input AgeRangeFilter{
+    minAge: Int
+    maxAge: Int
+}
+
+type Customer{
+    id: ID
+    name: String
+    age: Int
+    city: String
+}
